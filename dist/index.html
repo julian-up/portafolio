@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <script defer src="app.js"></script>
+    <script>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+    <script src="https://unpkg.com/split-type"></script>
+
+    <title>Portafolio</title>
+  </head>
+  <!-- modo claro y modo oscuro -->
+  <body
+    class="bg-sky-200 text-stone-900 dark:text-cyan-50 dark:bg-primary font-outfit"
+  >
+    <header>
+      <!-- inicio -->
+      <nav
+        class="flex justify-between py-10 px-10 m-auto text-xl font-semibold md:items-center"
+      >
+        <div
+          id="menu"
+          class="bg-white dark:bg-slate-800 p-7 h-[380px] w-[320px] md:flex flex-col items-start justify-around rounded-lg text-dark dark:text-white md:flex-row md:w-full md:py-0 md:h-[50px] md:bg-inherit md:dark:bg-primary hidden"
+        >
+          <ul
+            class="flex h-5/6 flex-col justify-around md:flex-row md:justify-center w-full text-sm"
+          >
+          <!-- modo oscuro -->
+          <button id="darkButton">
+            <i
+              class="bi bi-cloud-moon-fill text-sky-500 text-5xl drop-shadow-lg ease-out duration-500"
+            ></i>
+          </button>
+        </div>
+        <!-- boton hamburgesa -->
+        <button id="menu-button" class="absolute top-10 right-12 md:hidden">
+          <span
+            class="br-1 block bg-black black:bg-white my-2 rounded-md h-[3px] w-[28px]"
+          ></span>
+          <span
+            class="br-2 block bg-black black:bg-white my-2 rounded-md h-[3px] w-[28px]"
+          ></span>
+          <span
+            class="br-3 block bg-black black:bg-white my-2 rounded-md h-[3px] w-[28px] "
+          ></span>
+        </button>
+
+        <!-- fin del nav -->
+      </nav>
+    </header>
+    <main>
+      <!-- la seccion de hero -->
+      <section class="m-auto flex flex-col lg:flex-col lg:h-auto">
+        <div class="p-10 lg:w-[80%] lg:h-auto lg:self-center " id="who">
+          <h1
+            class="drop-shadow-lg text-sky-600 dark:text-sky-200 text-3xl font-bold tracking-widest ease-out duration-300"
+          >
+            Hola, soy
+          </h1>
+          <p
+            class="py-2 text-5xl font-bold text-sky-600 dark:text-sky-200 drop-shadow-lg ease-out duration-300"
+          >
+            Julian Santiago Gonzalez
+          </p>
+          <p
+            class="text-5xl font-bold text-yellow-500 drop-shadow-lg dark:text-yellow-200 ease-out duration-300"
+          >
+          Junior Full Stack Developer 
+          </p>
+          <p class="mt-6 text-2xl ease-out duration-300">
+            Soy estudiante de Ingenieria Agrónoma de la UNAL, apasionado por el campo y la tecnología, soy Tecnico Desarrollador de Software del SENA. ¡Quiero que los proyectos lleguen a todas las personas que lo necesitan!
+          </p>
+          <!-- REDES -->
+          <div class="py-6">
+            <a href="https://www.linkedin.com/in/julian-santiago-gonzalez-malpica-99852b300/" class="pr-2 text-3xl hover:text-sky-600 ease-out duration-300"><i class="bi bi-linkedin px-2 ease-out duration-300"></i></a>
+            <a href="https://github.com/julian-up" class="pr-2 text-3xl hover:text-purple-600 ease-out duration-300"><i class="bi bi-github px-2 "></i></a>
+          </div>
+          <div>
+            <button class="border-2 rounded border-amber-500 p-4 w-[250px] text-lg tracking-widest hover:bg-amber-500 hove:dark:text-yellow-200 ease-out duration-300"><a href="https://wa.link/bedxgu">Contáctame</a></button>
+          </div>
+        </div>
+      </section>
+      <!-- experiencia laboral -->
+       <div class="rounded-lg bg-stone-950/[10%] p-8" id="exp">
+         <h2 class="text-5xl text-amber-700 dark:text-white font-bold tracking-widest w-[86%] m-auto text-center pt-8 ease-out duration-300">Experiencia Laboral</h2>
+       <section class="my-12 flex flex-col w-[84%] m-auto lg:flex-row lg:w-[87%] lg:my-28 ease-out duration-300" id="jobSection">
+         <div class="flex justify-between lg:flex-col lg:w-[20%] ease-out duration-300">
+            <button type="button" id="link1" data-id="job1" class="border-b-2 hover:dark:bg-amber-500 w-full px-4 py-1 hover:bg-white focus:bg-white focus:border-amber-500 focus:dark:bg-amber-800 lg:border-l-2 lg:border-b-0 lg-h-full lg-text-left border-amber-500 bg-white dark:bg-amber-700 text-xl ease-out duration-300">Universidad Incca</button>
+         </div>
+         <!-- contendenedor de descripcion -->
+          <div class="my-5 lg:px-10 lg:my-0 lg:max-w-[800px] text-3xl ease-out duration-300">
+            <!-- primer trabajo -->
+          <article id="job1">
+            <h3>Desarrollador front-end <span class="text-amber-500 font-bold text-base ease-out duration-300">@Universidad Incca</span></h3>
+            <h4 class="text-xl pb-5 ease-out duration-300">2022-2023</h4>
+            <ul>
+               <li class="flex items-center py-2">
+                  <span class="pr-2 text-amber-500 font-black ease-out duration-300">&#9655</span>
+                  <p class="text-stone-900 dark:text-cyan-50 font-normal px-5 text-base ease-out duration-300">
+                    Mejorar significativamente la experiencia de usuario, migrando de un diseño con Bootstrap y PHP a una
+                    implementación más compatible y escalable con React y PHP.
+                  </p>
+               </li>
+               <li class="flex items-center py-2 ease-out duration-300">
+                  <span class="pr-2 text-amber-500 font-black ease-out duration-300">&#9655</span>
+                  <p class="text-stone-900 dark:text-cyan-50 font-normal px-5 text-base ease-out duration-300">
+                    Aprendí y implementé metodologías de arquitectura Ports & Adapters + Vertical Slicing + Screaming
+                    Architecture, dentro del manejo de peticiones al servidor y experiencia de usuario en menos de 1 mes.
+                  </p>
+               </li>
+            </ul>
+          </article>
+        <h3 class="text-3xl text-amber-700 darK:text-white mt-12 mb-10 px-10 font-bold tracking-widest text-center ease-out duration-300" id="conc">
+          Contáctame
+        </h3>
+        <section class="flex flex-col w-[90%] m-auto">
+          <form action="" class="w-[90%] md:max-w-[600px] m-auto">
+            <div><input 
+              placeholder="tucorreo@ejemplo"
+              type="email" name="email" id="email"
+              class="p-3 w-full rounded-lg focus:outline-none focus:rirng focus:ring-amber-900">
+            </div>
+            <div class="py-3">
+              <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="p-3 w-full rounded-lg focus:outline-none focus:rirng focus:ring-amber-900">
+            </div>
+            <div>
+              <textarea name="msg" id="msg" rows="5" placeholder="Aun no funciona pero pronto le agregaremos dinamismo"
+              class="p-3 w-full rounded-lg focus:outline-none focus:rirng focus:ring-amber-900"></textarea>
+            </div>
+            <div class="my-3">
+              <button
+              class="bg-amber-600 text-white p-3 w-full rounded-lg text-xl tracking-widest"><a href="#who">Enviar un Mensaje</a></button>
+            </div>
+          </form>
+
+          <footer class="text-center mt-12 mb-5">
+            <!-- footer -->
+            <div class="my-2">
+              <a href="https://www.linkedin.com/in/julian-santiago-gonzalez-malpica-99852b300/"><i class="bi bi-linkedin hover:text-sky-500 px-2 ease-out duration-300"></i></a>
+              <a href="https://github.com/julian-up"><i class="bi bi-github hover:text-purple-500 px-2 ease-out duration-300"></i></a>
+            </div>
+          </footer>
+        </section>
+    </main>
+  </body>
+</html>
